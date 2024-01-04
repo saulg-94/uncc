@@ -1,0 +1,16 @@
+{
+  "name": "uncc",
+  "version": "1.0.0",
+  "description": "Understanding NodeJS: Core Concepts",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "author": "saul gonzalez",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
