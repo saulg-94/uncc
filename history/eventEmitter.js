@@ -9,9 +9,19 @@ class Emitter extends EventEmitter{}
 const myE = new Emitter();
 
 myE.on("foo",()=>{
-    console.log("an event occured");
-    console.log('more things can happen here');
+    
+    console.log(1);
+   
 })
-console.log('first: before the FOO');
-myE.emit("foo")
-console.log('second: after FOO excutes');
+
+myE.on("foo",(x)=>{
+    
+    console.log(x);
+   
+})
+
+console.log(2);
+
+
+myE.emit("foo", 'bar')
+console.log(3);
