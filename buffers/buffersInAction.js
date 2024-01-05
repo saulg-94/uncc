@@ -24,3 +24,33 @@ import {Buffer} from 'buffer';
 
 // console.log(memoryContainer.toString('hex'));
 // EXAMPLE ---- EXAMPLE ---- EXAMPLE ---- EXAMPLE ----
+
+/*
+// challenge DISPLAY the following // 0100 1000 0110 1001 0010 0001 // 3 bytes (24 bits)
+const memoryContainer = Buffer.alloc(3) // 4 bytes (32 bits)
+
+memoryContainer[0] = 0x48
+memoryContainer[1] = 0x69;
+memoryContainer[2] = 0x21;
+
+// UTF-8 is specified below; if encoding not specified by default utf-8 is the encoding; check nodeJS docs for other encodings (spanish) : https://nodejs.org/docs/latest/api/buffer.html 
+console.log(memoryContainer.toString('utf-8'));
+*/
+
+// const memoryContainer = Buffer.from("486921","hex");
+// console.log(memoryContainer.toString());
+
+const memoryContainer = Buffer.from("Hi!","utf8");
+console.log(memoryContainer.toString());
+console.log(memoryContainer);
+
+/*
+reference the nodeJS docs for more info on
+ Buffer.alloc
+ Buffer.allocUnsafe
+ Buffer.allocUnsafeSlow
+ Buffer.from
+ Buffer.concat
+
+ https://nodejs.org/docs/latest/api/buffer.html
+*/
