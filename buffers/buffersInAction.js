@@ -40,9 +40,12 @@ console.log(memoryContainer.toString('utf-8'));
 // const memoryContainer = Buffer.from("486921","hex");
 // console.log(memoryContainer.toString());
 
-const memoryContainer = Buffer.from("Hi!","utf8");
-console.log(memoryContainer.toString());
+// const memoryContainer = Buffer.from("Hi!","utf8");
+// console.log(memoryContainer.toString());
+const memoryContainer = Buffer.alloc(1)
+memoryContainer[0] = 0x48
 console.log(memoryContainer);
+console.log(memoryContainer.toString());
 
 /*
 reference the nodeJS docs for more info on
