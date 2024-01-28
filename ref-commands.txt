@@ -1,0 +1,12 @@
+
+
+// CREATE COMMAND
+create a file text.txt
+
+// DELETE COMMAND
+
+
+// RENAME COMMAND
+
+// ADD TO FILE COMMAND
+add to the file text.txt this content: Hi!

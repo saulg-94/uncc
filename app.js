@@ -48,18 +48,31 @@ All <FileHandle> objects are <EventEmitter>s.
 
   const renameFile = async (oldPath, newPath)=>{
     try {
+        await fs.rename(oldPath, newPath)
+
         console.log(`Renaming ${oldPath} to ${newPath}`);
     } catch (error) {
+      if(error.code === "ENOENT"){
+        console.log("No file at this path to rename, or the destination does not exist");
+
+      }else {
+        console.log("An error occured while removing the file: ");
         console.log(error);
-    }
+      }
+    } 
   }
 
+
+  let addedContent; // <----- PREVENTS adding double entry of the same CONTENT being passed to 'addToFile'
   const addToFile = async (path, content)=>{
+    if(addedContent === content) return;
     try {
-        console.log(`Adding to ${path}`);
-        console.log(`Content: ${content}`);
+        const fileHandle = await fs.open(path, "a");
+        fileHandle.write(content);
+        addedContent = content
+        console.log("Content was added successfully!");
     } catch (error) {
-        console.log(error);
+        console.log("Something went wrong...",error);
     }
   }
 

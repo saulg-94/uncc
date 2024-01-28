@@ -1,1 +1,1 @@
-delete the file THIS.txt
+add to the file text.txt this content:  Lets Goo Hi!
