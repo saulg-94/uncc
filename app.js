@@ -1,3 +1,4 @@
+import { Console, log } from "console";
 import fs from "fs/promises";
 
 (async () => {
@@ -32,13 +33,18 @@ All <FileHandle> objects are <EventEmitter>s.
   };
 
   const deleteFile = async (path)=>{
+
     try {
+        await fs.unlink(path)
         console.log(`Deleting ${path}`);
     } catch (error) {
-        console.log(error);
+      if(error.code === "ENOENT"){
+        console.log("No file at this path to remove");
         
+    } else {
+      console.log("An error occured while removing the file: ", error)
     }
-  }
+  }};
 
   const renameFile = async (oldPath, newPath)=>{
     try {
